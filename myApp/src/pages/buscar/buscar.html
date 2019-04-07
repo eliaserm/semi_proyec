@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Buscar por municipio</ion-title>
+    </ion-navbar>
+    <ion-searchbar placeholder = "Buscar" (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-header>
+  
+  <ion-content padding>
+  <ion-list>
+    <ion-item *ngFor = "let casa of casas">
+      <ion-thumbnail item-start >
+        <img src = {{casa.imagenes[0][1]}}>
+      </ion-thumbnail>
+      <h2 *ngIf= "casa.hasOwnProperty('Mubicipio')">
+          {{ casa.Mubicipio }}
+      </h2>
+  
+      <p *ngIf = "casa.hasOwnProperty('precio')">
+        {{ casa.precio }}
+      </p>
+      <button ion-button clear item-end (click) = "info(casa)">
+        Ver
+      </button>
+    </ion-item>
+  </ion-list>
+  </ion-content>

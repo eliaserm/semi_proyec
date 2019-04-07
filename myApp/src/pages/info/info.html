@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>info</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-slides pager>
+  
+          <ion-slide *ngFor="let imagen of casa.imagenes" >
+              <img src= {{imagen[1]}}>
+          </ion-slide>
+        </ion-slides>
+  
+        <ion-card>
+            <ion-card-header>
+              descripcion
+            </ion-card-header>
+            <ion-card-content>
+              {{casa.descripcion}}
+            </ion-card-content>
+          </ion-card>
+  
+          <ion-card>
+              <ion-card-header>
+                precio
+              </ion-card-header>
+              <ion-card-content *ngIf="casa.hasOwnProperty('precio')">
+              <p>
+                  {{casa.precio}}
+              </p>
+              </ion-card-content>
+            </ion-card>
+  
+            <ion-card>
+                <ion-card-header>
+                  ubicacion
+                </ion-card-header>
+                <ion-card-content *ngIf="casa.hasOwnProperty('Municipio')">
+                    <p>
+                        {{casa.Municipio}}
+                    </p> 
+                </ion-card-content>
+                <ion-card-content *ngIf="casa.hasOwnProperty('colonia')">
+                    <p>
+                        {{casa.colonia}}
+                    </p> 
+                </ion-card-content>
+            </ion-card>
+  
+              <ion-card>
+                  <ion-card-header>
+                    recamaras
+                  </ion-card-header>
+                  <ion-card-content *ngIf="casa.hasOwnProperty('rooms')">
+                      <p>
+                          {{casa.rooms}}
+                      </p>                                                
+                      </ion-card-content>
+                </ion-card>
+  
+                <ion-card>
+                    <ion-card-header>
+                      wc
+                    </ion-card-header>
+                    <ion-card-content *ngIf="casa.hasOwnProperty('baths')">
+                        <p>
+                            {{casa.baths}}
+                        </p>
+                        </ion-card-content>
+                  </ion-card>
+
+                  <ion-card>
+                      <ion-card-header>
+                        wc
+                      </ion-card-header>
+                      <ion-card-content *ngIf="casa.hasOwnProperty('m2')">
+                          <p>
+                              {{casa.m2}}
+                          </p>
+                          </ion-card-content>
+                    </ion-card>
+
+                    <ion-card>
+                        <ion-card-header>
+                          wc
+                        </ion-card-header>
+                        <ion-card-content *ngIf="casa.hasOwnProperty('cars')">
+                            <p>
+                                {{casa.cars}}
+                            </p>
+                            </ion-card-content>
+                      </ion-card>
+  
+  </ion-content>
