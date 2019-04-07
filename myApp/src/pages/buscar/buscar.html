@@ -16,7 +16,11 @@
       </h2>
   
       <p *ngIf = "casa.hasOwnProperty('precio')">
-        {{ casa.precio }}
+        {{ casa.precio}}
+      </p>
+
+      <p *ngIf = "casa.hasOwnProperty('titulo')">
+          {{ casa.titulo}}
       </p>
       <button ion-button clear item-end (click) = "info(casa)">
         Ver
